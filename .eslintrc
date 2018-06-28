@@ -1,0 +1,25 @@
+{
+  "parser": "babel-eslint",
+  "plugins": [
+    "react"
+  ],
+  "rules": {
+    "react/prefer-stateless-function": "off",
+    "import/no-extraneous-dependencies": ["error", {"devDependencies": true}],
+    "import/no-dynamic-require": "off",
+    "arrow-parens": "off",
+    "global-require": "off"
+  },
+  "settings": {
+    "import/resolver": {
+      "webpack": {
+        "config": "config/webpack.config.dev.js"
+      }
+    }
+  },
+  "extends": "airbnb",
+  "env": {
+    "browser": true,
+    "es6": true
+  }
+}
