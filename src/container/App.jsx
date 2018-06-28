@@ -1,16 +1,34 @@
 import React, { Component } from 'react';
-import { hot } from 'react-hot-loader';
+import { connect } from 'react-redux';
+import {
+  country,
+} from 'actions';
+
 
 import './App.css';
 
+
 class App extends Component {
+  constructor(props) {
+    super(props);
+    const {
+      dispatch,
+    } = props;
+
+    dispatch(country.request());
+  }
+
   render() {
     return (
       <div className="App">
-          Test11111
+          Test
       </div>
     );
   }
 }
 
-export default hot(module)(App);
+export default connect((state) => (
+  {
+    country: state.country,
+  }
+))(App);

@@ -13,6 +13,7 @@ module.exports = {
   bail: true,
   devtool: 'source-map',
   entry: [
+    'babel-polyfill',
     paths.appIndexJs,
   ],
   output: {
@@ -100,7 +101,7 @@ module.exports = {
     ],
   },
   plugins: [
-    new CleanWebpackPlugin([paths.dist], { root: '' }),
+    new CleanWebpackPlugin([paths.dist], { root: process.cwd() }),
     new CopyWebpackPlugin([{ from: paths.appHtml, to: paths.dist }]),
     new HtmlWebpackPlugin({
       inject: true,

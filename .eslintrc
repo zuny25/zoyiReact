@@ -5,6 +5,7 @@
   ],
   "rules": {
     "react/prefer-stateless-function": "off",
+    "react/prop-types": 0,
     "import/no-extraneous-dependencies": ["error", {"devDependencies": true}],
     "import/no-dynamic-require": "off",
     "arrow-parens": "off",

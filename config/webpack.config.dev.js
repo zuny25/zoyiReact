@@ -10,6 +10,7 @@ module.exports = {
   mode: 'development',
   devtool: 'cheap-module-source-map',
   entry: [
+    'babel-polyfill',
     'react-dev-utils/webpackHotDevClient',
     paths.appIndexJs,
   ],
