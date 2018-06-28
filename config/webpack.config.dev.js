@@ -12,6 +12,7 @@ module.exports = {
   entry: [
     'babel-polyfill',
     'react-dev-utils/webpackHotDevClient',
+    'react-hot-loader/patch',
     paths.appIndexJs,
   ],
   output: {

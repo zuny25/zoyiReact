@@ -14,6 +14,13 @@ export default function configureStore(initialState) {
     ),
   );
 
+  if (module.hot) {
+    module.hot.accept('reducers', () => {
+      const nextRootReducer = require('reducers').default;
+      store.replaceReducer(nextRootReducer);
+    });
+  }
+
   store.runSaga = sagaMiddleware.run;
   store.close = () => store.dispatch(END);
   return store;
