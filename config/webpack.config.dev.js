@@ -10,7 +10,6 @@ module.exports = {
   mode: 'development',
   devtool: 'cheap-module-source-map',
   entry: [
-    'react-hot-loader/patch',
     'react-dev-utils/webpackHotDevClient',
     paths.appIndexJs,
   ],
