@@ -6,6 +6,7 @@ const Input = styled.input`
   height: 20px;
   padding: 0 5px;
   margin: 0;
+  outline: none;
 `;
 const InputWrapper = styled.div`
   margin-bottom: 10px;
