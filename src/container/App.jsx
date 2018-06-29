@@ -39,24 +39,60 @@ class App extends Component {
       country: {
         data,
         isFetching,
+        sort,
+        query,
       },
     } = this.props;
 
     return (
       <AppWrapper>
-        <Search onSearch={this.handleSearch} />
         {
           isFetching
             ? <Loader />
-            : <Table onSort={this.handleSort} data={data} />
+            : (
+              <React.Fragment>
+                <Search
+                  onSearch={this.handleSearch}
+                  query={query}
+                />
+                <Table
+                  onSort={this.handleSort}
+                  sort={sort}
+                  data={data}
+                />
+              </React.Fragment>
+            )
         }
       </AppWrapper>
     );
   }
 }
 
-export default connect((state) => (
-  {
-    country: state.country,
-  }
-))(App);
+export default connect((state) => {
+  const {
+    data,
+    sort,
+    query,
+  } = state.country;
+
+  const filteredData = query !== '' ? [...data].filter(
+    (item) => item.code.toLowerCase().includes(query.toLowerCase())
+      || item.name.toLowerCase().includes(query.toLowerCase()),
+  )
+    : [...data];
+
+  const orderedData = sort.type !== '' ? filteredData.sort((a, b) => {
+    const aField = a[sort.type];
+    const bField = b[sort.type];
+    const sortValue = aField < bField ? -1 : aField > bField ? 1 : 0;
+    return sort.desc ? sortValue * -1 : sortValue;
+  })
+    : filteredData;
+
+  return {
+    country: {
+      ...state.country,
+      data: orderedData,
+    },
+  };
+})(App);

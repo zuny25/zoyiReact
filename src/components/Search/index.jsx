@@ -7,7 +7,7 @@ export default class Search extends React.Component {
     } = this.props;
 
     return (
-      <div onClick={() => onSearch('test')}>
+      <div onClick={() => onSearch('b')}>
         Search
       </div>
     );
