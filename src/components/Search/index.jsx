@@ -11,8 +11,18 @@ const InputWrapper = styled.div`
   margin-bottom: 10px;
 `;
 const SearchBtn = styled.button`
+  outline: none;
   padding: 3px;
   height: 22px;
+  margin: 0;
+  background-color: #4CAF50;
+  color: #fff;
+  border: none;
+
+  &:active {
+    background-color: #3e8e41;
+    color: #fff;
+  }
 `;
 const Description = styled.div`
   color: #666;
