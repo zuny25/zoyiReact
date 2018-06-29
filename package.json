@@ -7,7 +7,8 @@
         "build": "webpack --config config/webpack.config.prod.js",
         "build:serve": "npm run build && npm run serve",
         "test": "node scripts/test.js --env=jsdom",
-        "serve": "serve -s dist"
+        "serve": "serve -s dist",
+        "api": "node server.js"
     },
     "babel": {
         "presets": [
@@ -17,12 +18,17 @@
         ]
     },
     "dependencies": {
+        "cors": "^2.8.4",
+        "express": "^4.16.3",
+        "install": "^0.12.1",
+        "npm": "^6.1.0",
         "react": "^16.4.1",
         "react-dom": "^16.4.1",
         "react-redux": "^5.0.7",
         "redux": "^4.0.0",
         "redux-logger": "^3.0.6",
-        "redux-saga": "^0.16.0"
+        "redux-saga": "^0.16.0",
+        "request": "^2.87.0"
     },
     "devDependencies": {
         "babel-core": "^6.26.3",
