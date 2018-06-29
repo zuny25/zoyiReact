@@ -28,6 +28,21 @@ const Cell = styled.div`
   }};
 `;
 
+const Placehodler = styled.div`
+  width: 480px;
+  height: 100px;
+  background-color: #eee;
+  padding: 10px;
+  display: flex;
+  justify-content: center; 
+  align-items: center;
+`;
+
+const PlaceholerText = styled.span`
+  vertical-align: middle;
+  color: #666;
+`;
+
 
 export default (props) => {
   const {
@@ -38,6 +53,16 @@ export default (props) => {
 
   if (!(data instanceof Array)) {
     return null;
+  }
+
+  if (data.length === 0) {
+    return (
+      <Placehodler>
+        <PlaceholerText>
+          No data exists
+        </PlaceholerText>
+      </Placehodler>
+    );
   }
 
   return (
