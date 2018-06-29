@@ -8,7 +8,7 @@ import {
 
 export const country = {
   request: () => action(types.COUNTRY[REQUEST]),
-  success: (response) => action(types.COUNTY[SUCCESS], { response }),
+  success: (response) => action(types.COUNTRY[SUCCESS], { response }),
   failure: (error) => action(types.COUNTRY[FAILURE], { error }),
 };
 
