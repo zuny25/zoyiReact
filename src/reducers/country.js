@@ -9,7 +9,7 @@ import {
   FAILURE,
 } from 'actions/utils';
 
-const initialState = {
+export const initialState = {
   isFetching: false,
   sort: {
     type: '',
