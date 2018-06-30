@@ -81,6 +81,9 @@ module.exports = {
     ],
   },
   optimization: {
+    splitChunks: {
+      chunks: 'all',
+    },
     minimizer: [
       new UglifyJsPlugin({
         parallel: true,

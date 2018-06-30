@@ -2,6 +2,7 @@
     "name": "zoyi-react",
     "version": "0.0.1",
     "private": true,
+    "sideEffects": false,
     "scripts": {
         "start": "node scripts/start.js",
         "build": "webpack --config config/webpack.config.prod.js",
