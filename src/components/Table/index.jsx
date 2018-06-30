@@ -4,22 +4,22 @@ import styled from 'styled-components';
 import SortableColumn from './SortableColumn';
 
 
-const TableWrapper = styled.div`
+export const TableWrapper = styled.div`
   border: 1px solid #ddd;
   border-radius: 4px;
   font-size: 13px;
 `;
-const Header = styled.div`
+export const Header = styled.div`
   border-bottom: 1px solid #ddd;
 `;
-const Rows = styled.div`
+export const Rows = styled.div`
   border-bottom: 1px solid #eee;
 
   &:last-child {
     border: none;
   }
 `;
-const Cell = styled.div`
+export const Cell = styled.div`
   display:inline-block;
   padding: 5px;
   width: ${props => {
@@ -28,7 +28,7 @@ const Cell = styled.div`
   }};
 `;
 
-const Placehodler = styled.div`
+export const Placeholder = styled.div`
   width: 480px;
   height: 100px;
   background-color: #eee;
@@ -38,7 +38,7 @@ const Placehodler = styled.div`
   align-items: center;
 `;
 
-const PlaceholerText = styled.span`
+export const PlaceholerText = styled.span`
   vertical-align: middle;
   color: #666;
 `;
@@ -57,11 +57,11 @@ export default (props) => {
 
   if (data.length === 0) {
     return (
-      <Placehodler>
+      <Placeholder>
         <PlaceholerText>
           No data exists
         </PlaceholerText>
-      </Placehodler>
+      </Placeholder>
     );
   }
 
