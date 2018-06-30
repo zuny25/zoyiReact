@@ -36,12 +36,10 @@ class App extends Component {
 
   render() {
     const {
-      country: {
-        data,
-        isFetching,
-        sort,
-        query,
-      },
+      data,
+      isFetching,
+      sort,
+      query,
     } = this.props;
 
     return (
@@ -90,9 +88,7 @@ export default connect((state) => {
     : filteredData;
 
   return {
-    country: {
-      ...state.country,
-      data: orderedData,
-    },
+    ...state.country,
+    data: orderedData,
   };
 })(App);

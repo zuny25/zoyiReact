@@ -83,6 +83,7 @@
         "jest": "^23.2.0",
         "react-dev-utils": "^5.0.1",
         "react-hot-loader": "^4.3.3",
+        "redux-test-utils": "^0.2.2",
         "serve": "^9.1.0",
         "style-loader": "^0.21.0",
         "uglifyjs-webpack-plugin": "^1.2.7",
